@@ -1,0 +1,156 @@
+<!--index.wxml-->
+<view class="cont">
+
+  <!--搜索-->
+  <!-- <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消       </view>
+  </view> -->
+
+  <!--搜索-->
+
+  <!-- 滑动的图 -->
+  <swiper indicator-dots="{{true}}">
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item.photo}}" mode="aspectFit" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 滑动的图 -->
+
+  <!--分类-->
+  <view class="classify">
+    <view class="classify_a" style="border-right:{{item.none}}" wx:for="{{classify}}" wx:key="key" bindtap="classify" data-id="{{item.id}}" data-index="{{item.index}}">
+      <image src="{{item.bz_1}}"></image>
+      <view class="classify_a_one">{{item.name}} </view>
+    </view>
+  </view>
+  <!--分类-->
+
+  <!--分割线-->
+  <view class="xian"></view>
+  <!--分割线-->
+
+  <!-- 线上种地 -->
+  <view class="coupon">
+    <image src="../../pictures/zzty.png"></image>
+    <text class="coupon_a">种植体验</text>
+    <navigator url='../zhongzhi/zhongzhi' class='coupon_b' hover-class="none">更多 </navigator>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <!-- 土地认领 -->
+
+      <image src='../../pictures/tudi.png' mode="scaleToFill" style='height:200rpx;width:270rpx;display: flex; margin: auto;'></image>
+    </view>
+    <view class="weui-flex__item">
+      <!-- 寓教于乐 -->
+
+      <image src='../../pictures/yu.png' mode="scaleToFill" style='height:200rpx;width:270rpx;display: flex; margin: auto;'></image>
+    </view>
+  </view>
+  <view>
+    <view class="xianshangzhongdi" bindtap='chucao'>
+
+      <image src="../../images/chucao.png"></image>
+      <view class="xianshangzhongdi_one">在线除草 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="shifei">
+
+      <image src="../../images/shifei.png"></image>
+      <view class="xianshangzhongdi_one">有机施肥 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="fandi">
+
+      <image src="../../images/fandi.png"></image>
+      <view class="xianshangzhongdi_one">翻地 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="bozhong">
+
+      <image src="../../images/bozhong.png"></image>
+      <view class="xianshangzhongdi_one">在线播种 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="kuaidi">
+
+      <image src="../../images/kuaidi.png"></image>
+      <view class="xianshangzhongdi_one">快递到家 </view>
+    </view>
+  </view>
+  <!-- 线上种地 -->
+
+
+  <!--分割线-->
+  <view class="xian"></view>
+  <!--分割线-->
+
+
+  <!--采摘+购买-->
+
+  <!-- <view class="coupon">
+    <image src="../../images/shops.png"></image>
+    <text class="coupon_a">果蔬商城</text>
+    <text class="coupon_b">新鲜的果蔬</text>
+  </view>
+
+  <view class="renqi" wx:for="{{cai}}" wx:key="key">
+    <navigator url="../product/product?productId={{item.id}}">
+      <image class='renqi_a' mode='aspectFit' src="{{item.photo_d}}">
+        <text class="kai" wx:if="{{item.tag != NULL}}">{{item.tag}}</text>
+      </image>
+      <view class="renqi_b to">{{item.name}}</view>
+      <view class="renqi_c to">{{item.intro}}</view>
+
+      <view class="renqi_d to">
+        <text class="yuan">￥{{item.price}}</text>
+        <view class="ping">
+          <image src="../../images/ping.png"></image>
+          <text>{{item.renqi}}</text>
+        </view>
+      </view>
+    </navigator>
+    <view class="xian" style="margin-top:10rpx;"></view>
+  </view> -->
+  <!--采摘+购买-->
+
+  <!--农家乐-->
+
+  <!-- <view class="coupon">
+
+    <image src="../../pictures/nzly.png"></image>
+    <text class="coupon_a">农庄乐园</text>
+    <text class="coupon_b">感受农庄乐趣</text>
+  </view>
+
+  <view class="renqi" wx:for="{{nong}}" wx:key="key">
+    <navigator url="../product2/product2?productId={{item.id}}">
+      <image class='renqi_a' mode='aspectFit' src="{{item.photo_d}}">
+        <text class="kai" wx:if="{{item.tag != NULL}}">{{item.tag}}</text>
+      </image>
+      <view class="renqi_b to">{{item.name}}</view>
+      <view class="renqi_c to">{{item.intro}}</view>
+
+      <view class="renqi_d to">
+        <text class="yuan">￥{{item.price}}</text>
+        <view class="ping">
+          <image src="../../images/ping.png"></image>
+          <text>{{item.renqi}}</text>
+        </view>
+      </view>
+    </navigator>
+    <view class="xian" style="margin-top:10rpx;"></view>
+  </view> -->
+
+  <!--农家乐-->
+</view>

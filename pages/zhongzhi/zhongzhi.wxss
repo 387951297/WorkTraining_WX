@@ -1,0 +1,48 @@
+@import "../../weui.wxss";
+.cont {
+  width: 100%;
+  height: 100%;
+}
+.coupon {
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.coupon image {
+  height: 60rpx;
+  width: 60rpx;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+}
+
+.coupon_a {
+  flex: 0.3;
+}
+
+.coupon_b {
+  flex: 0.65;
+  text-align: right;
+  color: #999;
+}
+.xianshangzhongdi {
+  display: inline-block;
+  border-right: 3rpx solid #e6e6ea;
+  border-bottom: 3rpx solid #e6e6ea;
+  width: 19.5%;
+  text-align: center;
+}
+
+.xianshangzhongdi image {
+  height: 100rpx;
+  width: 100rpx;
+  margin-top: 20rpx;
+}
+
+.xianshangzhongdi_one {
+  text-align: center;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+}

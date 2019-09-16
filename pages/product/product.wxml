@@ -1,0 +1,142 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<!--内容开始-->
+<view class="cont">
+  <swiper style="height:375px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerItem}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <view class="title">{{pro.name}}</view>
+  <view class="titles">{{pro.intro}}</view>
+
+
+  <!--
+<view class="xian"></view>-->
+  <!--介绍说明-->
+  <view class="gmxx">
+
+    <!-- <view class="font_two ">
+      【今天下单立减1000元！】旋转制冰盒，触屏门把手时尚便捷！原装变频压缩机，静音更节能！独立双循环，保鲜更无霜！
+    </view> -->
+
+    <!-- 金额 -->
+    <view>
+      <view style="margin-top:10rpx;">
+        <span class="jiage">
+          ¥:{{prodetail2.price_yh}}
+          <text class="yuan">￥{{prodetail2.price}}</text>
+        </span>
+        <span class="c6 fl_r font_14" style='color:#ccc'>
+          库存：{{prodetail2.store}}
+        </span>
+      </view>
+    </view>
+
+
+    <view class="xian"></view>
+
+
+    <!--服务-->
+    <view class="cu">
+      <text class="cu_one">服务</text>
+      <image class="fu_a" src="../../images/gou.png"></image>
+      <text class="songa">官方唯一商城</text>
+      <image class="fu_a" src="../../images/gou.png"></image>
+      <text class="songs">全国联保</text>
+      <image class="fu_a" src="../../images/gou.png"></image>
+      <text class="songs">全场包邮</text>
+    </view>
+
+    <view class="fenge"></view>
+
+    <!-- 库存数量 -->
+    <view class="shu">
+      <text class="cun">数量</text>
+      <view class="dian">
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatuses[index]}}" data-alpha-beta="0" bindtap="changeNum">-</text>
+          <!-- 数值 -->
+          <view class="nownum">{{buynum}}</view>
+          <!-- 加号 -->
+          <text class="normal" data-alpha-beta="1" bindtap="changeNum">+</text>
+        </view>
+      </view>
+      <text class="gous">库存：{{prodetail2.store}}</text>
+    </view>
+
+
+    <view class="fenge"></view>
+  </view>
+
+  <!--产品参数-->
+  <view class="shuxing" bindtap="shuxing" data-id="{{id}}">
+    <view style="flex:1">产品参数</view>
+    <image src="../../images/you.png" class="shu_img {{png=='1'? 'ac' : ''}}"></image>
+  </view>
+  <!--折叠 -->
+  <view class="" wx:if="{{shuxing}}">
+    <view class="xin">产品信息</view>
+    <view class="xin_a" wx:for="{{param}}">
+      <view class="xin_aa">{{index}}</view>
+      <view class="xin_bb">{{item}}</view>
+    </view>
+  </view>
+  <!--产品参数-->
+
+  <view class="fenge"></view>
+</view>
+
+<!--图文详情头部-->
+<view class="swiper-tab">
+  <view class="bre swiper-tab-list {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">图文详情</view>
+</view>
+<view >
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+<!-- 图文详情 -->
+
+
+
+<!---底部开始-->
+<view class="footfixed">
+  <view class="zuo">
+    <!--客服 -->
+    <view class="zuo_a">
+      <view class="zuo_a">
+        <image class="icon_kf" src="/images/kefu.png"></image>
+        <view class="dbtext">客服</view>
+      </view>
+      <!--会话-->
+      <view class="huihua">
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+        <contact-button></contact-button>
+      </view>
+    </view>
+    <!--跳转购物车-->
+    <view class="zuo_b" bindtap="gouCart">
+      <view>
+        <image class="icon_kf" src="/images/carta.png"></image>
+        <view class="dbtext">购物车</view>
+      </view>
+    </view>
+  </view>
+
+  <!--加入购物车 立即购买-->
+  <view class="right">
+    <view class="right_a" data-type="addcart" bindtap="addShopCart">加入购物车</view>
+    <view class="right_b" bindtap="buyNow" data-type="buynow" data-status="1">立刻购买</view>
+  </view>
+</view>
+<!--底部-->

@@ -1,0 +1,48 @@
+
+<view class="cont">
+
+  <!-- 土地认领 -->
+
+
+
+
+ <view>
+    <view class="xianshangzhongdi" bindtap='chucao'>
+
+      <image src="../../images/chucao.png"></image>
+      <view class="xianshangzhongdi_one">在线除草 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="shifei">
+
+      <image src="../../images/shifei.png"></image>
+      <view class="xianshangzhongdi_one">有机施肥 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="fandi">
+
+      <image src="../../images/fandi.png"></image>
+      <view class="xianshangzhongdi_one">翻地 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="bozhong">
+
+      <image src="../../images/bozhong.png"></image>
+      <view class="xianshangzhongdi_one">在线播种 </view>
+    </view>
+    <view class="xianshangzhongdi" bindtap="kuaidi">
+
+      <image src="../../images/kuaidi.png"></image>
+      <view class="xianshangzhongdi_one">快递到家 </view>
+    </view>
+  </view>
+
+  <view style='width:100%;'>
+	<!-- picture -->
+    <image src='../../pictures/tudi.png' mode='aspectFill' style='width:100%;height:180;'></image>
+  </view>
+  <text decode='{{true}}'>&nbsp;</text>
+  <!-- 寓教于乐 -->
+  <view style='width:100%;'>
+	<!-- picture -->
+    <image src='../../pictures/yu.png' mode='aspectFill' style='width:100%;height:180;'></image>
+  </view>
+	
+</view>

@@ -1,0 +1,66 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <!-- <view class="cm">
+  </view> -->
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+
+  </view>
+
+
+
+  <view class="xian"></view>
+
+  <view class="qbdd mt10">
+    <navigator class="qb" url="../cart/cart">
+      <view class="">
+        <image class="shuoming" src="../../images/carta.png"></image>
+      </view>
+      <span class="font_14 c3">购物车</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+  </view>
+
+
+
+
+
+  <view class="qbdd mt10" bindtap="powerDrawer" data-statu="open">
+    <navigator class="qb" url="../dingdan/dingdan">
+      <view class="">
+        <image class="shuoming" src="../../images/ding.png"></image>
+      </view>
+      <span class="font_14 c3">我的订单</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+  </view>
+  <!--url="../record/record"-->
+  <view class="qbdd mt10" bindtap="powerDrawer">
+    <navigator class="qb" url="../address/user-address/user-address">
+      <view class="">
+        <image class="shuoming" src="../../images/map.png"></image>
+      </view>
+      <span class="font_14 c3">地址管理</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+  </view>
+  <!--url="../record/record"-->
+  <view class="qbdd mt10" bindtap="powerDrawer">
+    <navigator class="qb" url="../personal/personal">
+      <view class="">
+        <image class="shuoming" src="../../images/help.gif"></image>
+      </view>
+      <span class="font_14 c3">帮助</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+  </view>
+
+  <view class="xian"></view>
+
+</view>

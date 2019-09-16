@@ -1,0 +1,50 @@
+<!--pay.wxml-->
+<view class="w100">
+
+  <!-- 商品信息 -->
+  <view class="p_all bg_white df item" wx:for="{{productData}}" wx:key="key">
+    <view class="cp_photo">
+      <image src="{{item.photo_x}}"></image>
+    </view>
+    <view class="df_1">
+      <view class="font_14 mt5 ovh1">
+        {{item.name}}
+      </view>
+      <text class="gm_ovh_1h red pt10">¥{{item.price}}</text>
+      <text class="gm_ovh_1h pt10">数量：{{item.num}}</text>
+    </view>
+  </view>
+
+
+  <!-- 收货人和地址 -->
+  <view class="p_all bg_white mt10 font_14">
+    <!-- <navigator url="../address/user-address/user-address?select=true&temp=1&cartId={{cartId}}" hover-class="none"> -->
+      <view class="df">
+        <view class="df_1 c6">
+          <view class="l_h20">收货人：{{address.name}}
+            <text class="fl_r mr10">{{address.tel}}</text>
+          </view>
+          <view class="l_h20 mt5">地址：{{address.address_xq}}</view>
+        </view>
+      </view>
+    <!-- </navigator> -->
+  </view>
+
+
+  <!-- 备注 -->
+  <view class="p_all bg_white mt10 font_14">
+    <textarea class="min_60" auto-height name="remark" placeholder="备注" bindinput="remarkInput" value="{{remark}}" />
+  </view>
+
+  <!-- 总计 -->
+  <view class="zhifu mt10 tc">应共支付：
+    <span class="font_20 red">￥{{total}}</span>
+  </view>
+  <!-- 支付按钮 -->
+  <view class="p_all mt10">
+    <view class="btnGreen">
+      <button class="wx_pay_submit" type="primary" id="wxPay" disabled="{{btnDisabled}}" formType="submit" bindtap="createProductOrderByWX">微信支付</button>
+    </view>
+  </view>
+
+</view>
